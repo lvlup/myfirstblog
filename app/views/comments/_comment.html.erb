@@ -1,0 +1,17 @@
+<p>
+ <b> Комментатор: </b>
+ <%= comment.commenter %>
+</p>
+
+<p>
+ <b> Комментарий: </b>
+ <%= comment.body %>
+</p>
+
+<p>
+<%= link_to 'удалить комментарий', [comment.post, comment],
+              :confirm=> 'Вы уверены?',
+              :method=> :delete %>
+</p>
+
+

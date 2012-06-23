@@ -1,0 +1,56 @@
+<p class="notice"><%= notice %></p>
+
+<p>
+  <b>Название:</b>
+  <%= @post.name %>
+</p>
+
+<p>
+  <b>String:</b>
+  <%= @post.string %>
+</p>
+
+<p>
+  <b>Заголовок:</b>
+  <%= @post.title %>
+</p>
+
+<p>
+  <b>Содержимое:</b>
+  <%= @post.content %>
+</p>
+
+<p>
+  <b>Текст:</b>
+  <%= @post.text %>
+</p>
+
+<p>
+  <b>Tags:</b>
+  <%= join_tags(@post) %>
+</p>
+
+<h2> Комментарии </h2>
+<%= render @post.comments %>
+
+
+
+<h2> Оставить комментарий: </h2>
+<%= form_for([@post,@post.comments.build]) do |f| %>
+ <div class="field">
+   <%= f.label :commenter %><br />
+   <%= f.text_field :commenter %>
+ </div>
+ <div class="field">
+   <%= f.label :body %><br />
+   <%= f.text_area :body %>
+</div>
+<div class="actions">
+ <%= f.submit %>
+</div>
+<% end %>
+
+<br />
+
+<%= link_to 'Редактировать', edit_post_path(@post) %> |
+<%= link_to 'Назад к постам', posts_path %>

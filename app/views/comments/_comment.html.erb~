@@ -1,0 +1,11 @@
+<p>
+ <b> Комментатор: </b>
+ <%= comment.commenter %>
+</p>
+
+<p>
+ <b> Комментарий: </b>
+ <%= comment.body %>
+</p>
+
+
